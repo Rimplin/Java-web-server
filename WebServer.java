@@ -118,6 +118,13 @@ class HttpRequest implements Runnable {
         if(fileName.endsWith(".jpeg") || fileName.endsWith(".jpg")){
             return "image/jpeg";
         }
+        if (fileName.endsWith(".css")){
+            return "text/css";
+        }
+        if (fileName.endsWith(".js")){
+            return "application/javascript";
+        }
+
         return "application/octet-stream";
     }
 
