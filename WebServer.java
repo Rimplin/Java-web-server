@@ -70,15 +70,11 @@ class HttpRequest implements Runnable {
         if (fileExists) {
             statusLine = "HTTP/1.0 200 OK" + CRLF;
             contentTypeLine = "Content-type: " + contentType( fileName ) + CRLF;
-
-            System.out.println("Received: " + statusLine);
         }else {
             statusLine = "HTTP/1.0 404 Not Found" + CRLF;
             contentTypeLine = "Content-Type: text/html" + CRLF;
             entityBody = "<HTML>" + "<HEAD><TITLE>Not Found</TITLE></HEAD>" +
             "<BODY>Not Found</BODY></HTML>";
-
-            System.out.println("Received: " + statusLine);
         }
 
         // Send the status line.
